@@ -20,4 +20,4 @@ def RSK(p):
         insert(int(p[i]), i+1)
     return (P,Q)
 
-print(RSK('1364752'))
+print(RSK('23514'))
