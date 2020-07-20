@@ -1,0 +1,19 @@
+name: Mirror Repo from gitee to github 
+
+on: 
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0,12 * * *'
+
+jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1.0.1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE }}
+        with:
+          source-repo: 'git@gitee.com:whzecomjm/Python-Instances.git'
+          destination-repo: 'git@github.com:whzecomjm/Python-Instances.git'
